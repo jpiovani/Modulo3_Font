@@ -1,0 +1,123 @@
+.App-logo {
+  height: 100px;
+  border-left: 10px;
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.box{
+  display: table;
+  float: left;
+}
+
+.nome{
+    color: rgb(3, 3, 3);
+    margin-left: 250px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-nome{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 250px;
+}
+
+.sobrenome{
+    color: rgb(3, 3, 3);
+    margin-left: 100px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-sobrenome{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 100px;
+}
+
+.celular{
+    color: rgb(3, 3, 3);
+    margin-left: 250px;
+    margin-top: 60px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-celular{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 250px;
+}
+
+.email{
+    color: rgb(3, 3, 3);
+    margin-left: 100px;
+    margin-top: 60px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-email{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 100px;
+}
+
+.cep{
+    color: rgb(3, 3, 3);
+    margin-left: 250px;
+    margin-top: 60px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-cep{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 250px;
+}
+
+.senha{
+    color: rgb(3, 3, 3);
+    margin-left: 100px;
+    margin-top: 60px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-senha{
+    background-color: silver;
+    height: 30px;
+    width: 300px;
+    margin-left: 100px;
+}
+
+.box-botao{
+  background-color: rgb(31, 223, 31);
+  border: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 730px;
+  margin-top: 60px;
+}

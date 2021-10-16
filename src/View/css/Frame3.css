@@ -13,3 +13,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+.box{
+  display: table-row-group;
+  float: left;
+  margin-left: 70px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.circle{
+  list-style-type: circle;
+}
+
+.titulo{
+  color: rgb(31, 223, 31);
+}

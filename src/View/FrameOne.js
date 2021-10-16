@@ -1,21 +1,27 @@
+import React from "react";
 import logo from './Pictures/sem_fundo.png';
 import roupas from './Pictures/roupa_suja.png'
 import usuario from './Pictures/usuario_app.png'
 import lavanderia from './Pictures/lavanderia.png'
 import recolher from './Pictures/recolhe_roupa.png'
 import './css/Frame1.css'
-import { Link, Route, Switch} from "react-router-dom"
-import FrameTwo from './FrameTwo';
-import FrameThree from './FrameThree'
+import { BrowserRouter, Link, Route, Switch} from "react-router-dom"
+import FrameTwoController from '../Controller/FrameTwoController';
+import FrameThreeController from '../Controller/FrameThreeController'
+import { Redirect } from 'react-router';
 
 function FrameOne() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Link className="menu-servicos" to="/buscar">Serviços</Link>
-        <p className="menu-empresas">Empresas</p>
-        <Link className="menu-criar-conta" to="/criar">Criar Conta</Link>
+        <BrowserRouter>
+          <Link className="menu-servicos" to="/buscar">Empresas</Link>
+        </BrowserRouter>
+        <p className="menu-empresas">Serviços</p>
+        <BrowserRouter>
+          <Link className="menu-criar-conta" to="/criar">Criar Conta</Link>
+        </BrowserRouter>
         <p className="menu-login">Login</p>
       </header>
       <p className="info">Bora conferir como funciona?</p>
@@ -42,10 +48,12 @@ function FrameOne() {
         roupas limpas." />
         <h3 className="titulo-img-recolher-2">Entrega das roupas</h3>
       </div>
-      <Switch>
-        <Route path="/buscar" ><FrameThree /></Route>
-        <Route path="/criar" ><FrameTwo /></Route>
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/buscar" ><FrameThreeController /></Route>
+          <Route path="/criar" ><FrameTwoController /></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

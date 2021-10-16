@@ -4,7 +4,7 @@ import React from "react";
 function FrameCreate() {
     return (
         <div className="App">
-           <h1>Criação realizada com sucesso!!!!!! Aguarde......Praticidade esta chegando</h1>
+           <h1 className="sucesso">Criação realizada com sucesso!!!!!! Aguarde......Praticidade esta chegando</h1>
         </div>
     );
 }

@@ -28,19 +28,19 @@
 .menu-empresas{
   color: rgb(91, 91, 88);
   font-weight: bold;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 
 .menu-criar-conta{
   color: rgb(91, 91, 88);
   font-weight: bold;
-  margin-left: 500px;
+  margin-left: 200px;
 }
 
 .menu-login{
   color: rgb(91, 91, 88);
   font-weight: bold;
-  margin-left: 100px;
+  margin-left: 50px;
   display: inline;
   background-color: rgb(31, 223, 31);
   padding: 10px;

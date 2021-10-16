@@ -9,10 +9,13 @@ const INITIAL_STATE = {
     lavanderia: [],
     user: null,
     senha: null,
+    lav: null,
     isConnectingSearchLavanderia: false,
     searchLavanderiaWithSuccess: 0,
     isConnectingCreateUser: false,
-    createUserWithSuccess: 0
+    createUserWithSuccess: 0,
+    isConnectingCreateLav: false,
+    createLavWithSuccess: 0
 };
 //Cria a função responsável por organizar o Reducer
 export default function icleanInfo(state = INITIAL_STATE, { type, payload }) {
@@ -54,18 +57,36 @@ export default function icleanInfo(state = INITIAL_STATE, { type, payload }) {
                 draft.createUserWithSuccess = 0;
                 break;
             }
-            case 'icleanInfo/SEARCH_LAVANDERIA_FINISH_SUCCESS': {
+            case 'icleanInfo/CREATE_USUARIO_FINISH_SUCCESS': {
                 draft.user = payload.user;
                 draft.senha = payload.senha;
                 draft.isConnectingCreateUser = false;
                 draft.createUserWithSuccess = 1;
                 break;
             }
-            case 'icleanInfo/SEARCH_LAVANDERIA_FINISH_ERROR': {
+            case 'icleanInfo/CREATE_USUARIO_FINISH_ERROR': {
                 draft.user = null;
                 draft.senha = null;
                 draft.isConnectingCreateUser = false;
                 draft.createUserWithSuccess = 2;
+                break;
+            }
+            case 'icleanInfo/CREATE_LAVANDERIA_START': {
+                draft.lav = null;
+                draft.isConnectingCreateLav = true;
+                draft.createLavWithSuccess = 0;
+                break;
+            }
+            case 'icleanInfo/CREATE_LAVANDERIA_FINISH_SUCCESS': {
+                draft.lav = payload.lav;
+                draft.isConnectingCreateLav = false;
+                draft.createLavWithSuccess = 1;
+                break;
+            }
+            case 'icleanInfo/CREATE_LAVANDERIA_FINISH_ERROR': {
+                draft.lav = null;
+                draft.isConnectingCreateLav = false;
+                draft.createLavWithSuccess = 2;
                 break;
             }
             default:

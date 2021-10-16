@@ -43,16 +43,43 @@ export function createUsuario(usuario) {
     };
 }
 
-export function createUsuarioFinishSuccess(lavanderia) {
+export function createUsuarioFinishSuccess(usuario) {
     return {
         type: 'icleanInfo/CREATE_USUARIO_FINISH_SUCCESS',
-        payload: { lavanderia },
+        payload: { usuario },
     };
 }
 
 export function createUsuarioFinishError() {
     return {
         type: 'icleanInfo/CREATE_USUARIO_FINISH_ERROR',
+        payload: {},
+    };
+}
+
+export function createLavanderiaStart() {
+    return {
+        type: 'icleanInfo/CREATE_LAVANDERIA_START',
+    };
+}
+
+export function createLavanderia(lavanderia) {
+    return {
+        type: 'icleanInfo/CREATE_LAVANDERIA',
+        payload: { lavanderia },
+    };
+}
+
+export function createLavanderiaFinishSuccess(lavanderia) {
+    return {
+        type: 'icleanInfo/CREATE_LAVANDERIA_FINISH_SUCCESS',
+        payload: { lavanderia },
+    };
+}
+
+export function createLavanderiaFinishError() {
+    return {
+        type: 'icleanInfo/CREATE_LAVANDERIA_FINISH_ERROR',
         payload: {},
     };
 }

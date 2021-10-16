@@ -10,7 +10,9 @@ import {
     searchLavanderiaFinishSuccess,
     searchLavanderiaFinishError,
     createUsuarioFinishSuccess,
-    createUsuarioFinishError
+    createUsuarioFinishError,
+    createLavanderiaFinishSuccess,
+    createLavanderiaFinishError
 } from './action';
 
 //Saga responsável por buscar a informação e alterar o Reducer
@@ -73,8 +75,41 @@ function* createUsuarios({ payload}) {
     }
 }
 
+function* createLavanderia({ payload }) {
+    try {
+        //Obtendo a variável search do payload
+        const { lavanderia } = payload;
+        let nome = lavanderia.nome;
+
+        console.log("Start Connection " + nome);
+        console.log("json " + JSON.stringify(lavanderia))
+        console.log("Before Call");
+        //Realiza a conexão para criar usuario
+        const returnCreate = yield call(IcleanApi.post, "" ,JSON.stringify(lavanderia), {
+            headers: {
+                'Content-Type': 'application/json',
+                'crossorigin': 'true',
+            }
+        });
+        console.log("After Call");
+        console.log("retorno " + returnCreate.data);
+        //Verificar se o retorno é um array, se sim, volta sucesso
+        if (returnCreate.data != null) {
+            console.log("Success Call");
+            yield put(createLavanderiaFinishSuccess(returnCreate.data));
+        } else {
+            console.log("NOT SUCCESS");
+            yield put(createLavanderiaFinishError());
+        }
+    } catch (err) {
+        console.log("Error Call--");
+        yield put(createLavanderiaFinishError());
+    }
+}
+
 //Junta todos as sagas deste objeto
 export default all([
     takeLatest('icleanInfo/SEARCH_LAVANDERIA', searchLavanderia),
-    takeLatest('icleanInfo/CREATE_USUARIO', createUsuarios)
+    takeLatest('icleanInfo/CREATE_USUARIO', createUsuarios),
+    takeLatest('icleanInfo/CREATE_LAVANDERIA', createLavanderia)
 ]);

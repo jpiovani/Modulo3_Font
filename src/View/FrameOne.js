@@ -8,7 +8,7 @@ import './css/Frame1.css'
 import { BrowserRouter, Link, Route, Switch} from "react-router-dom"
 import FrameTwoController from '../Controller/FrameTwoController';
 import FrameThreeController from '../Controller/FrameThreeController'
-import { Redirect } from 'react-router';
+import FrameFourController from '../Controller/FrameFourController'
 
 function FrameOne() {
   return (
@@ -16,9 +16,11 @@ function FrameOne() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <BrowserRouter>
-          <Link className="menu-servicos" to="/buscar">Empresas</Link>
+          <Link className="menu-servicos" to="/buscar">Buscar Lavanderias</Link>
         </BrowserRouter>
-        <p className="menu-empresas">Serviços</p>
+        <BrowserRouter>
+          <Link className="menu-empresas" to="/cadastrar">Cadastrar Lavanderias</Link>
+        </BrowserRouter>
         <BrowserRouter>
           <Link className="menu-criar-conta" to="/criar">Criar Conta</Link>
         </BrowserRouter>
@@ -52,6 +54,7 @@ function FrameOne() {
         <Switch>
           <Route path="/buscar" ><FrameThreeController /></Route>
           <Route path="/criar" ><FrameTwoController /></Route>
+          <Route path="/cadastrar" ><FrameFourController /></Route>
         </Switch>
       </BrowserRouter>
     </div>
